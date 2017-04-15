@@ -9,11 +9,9 @@ git_rm_branches () {
 }
 
 pacsave () {
-    aura -Qqmet > "${HOME}/.cowmoo/packages/aur.txt"
-    aura -Qqet | grep -xv "$( aura -Qqme )" > "${HOME}/.cowmoo/packages/pac.txt"
+    pacaur -Qqet > "${HOME}/.cowmoo/packages.txt"
 }
 
 pacrestore () {
-    sudo aura -S --needed - < "${HOME}/.cowmoo/packages/pac.txt"
-    sudo aura -A --needed $( cat "${HOME}/.cowmoo/packages/aur.txt" )
+    pacaur -S --needed - < "${HOME}/.cowmoo/packages.txt"
 }

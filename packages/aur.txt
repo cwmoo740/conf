@@ -1,8 +1,0 @@
-aura-bin
-chromium-widevine
-exercism-cli
-hipchat
-private-internet-access-vpn
-slack-desktop
-tor-browser-en
-yarn
