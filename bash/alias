@@ -1,0 +1,19 @@
+node_modules () {
+    if [ -d "${PWD}/node_modules" ]; then
+        export PATH="${PATH}":"${PWD}"/node_modules/.bin
+    fi
+}
+
+git_rm_branches () {
+    git branch | grep -v "$(git rev-parse --abbrev-ref HEAD)\|master" | xargs git branch -D
+}
+
+pacsave () {
+    aura -Qqmet > "${HOME}/.cowmoo/packages/aur.txt"
+    aura -Qqet | grep -xv "$( aura -Qqme )" > "${HOME}/.cowmoo/packages/pac.txt"
+}
+
+pacrestore () {
+    sudo aura -S --needed - < "${HOME}/.cowmoo/packages/pac.txt"
+    sudo aura -A --needed $( cat "${HOME}/.cowmoo/packages/aur.txt" )
+}
