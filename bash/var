@@ -1,0 +1,4 @@
+export EDITOR="/usr/bin/vim"
+export WEBIDE_JDK="/usr/lib/jvm/intellij-jdk"
+export IDEA_JDK="/usr/lib/jvm/intellij-jdk"
+export JAVA_HOME="/usr/lib/jvm/default"

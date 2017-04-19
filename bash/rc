@@ -1,9 +1,10 @@
 source "${HOME}/.cowmoo/bash/alias"
+source "${HOME}/.cowmoo/bash/var"
 
 node_modules
 
 export PATH=${PATH}:${HOME}/.config/yarn/global/node_modules/.bin
-export PATH=${PATH}:${HOME}/.anaconda/python/bin
+export PATH=${PATH}:${HOME}/.anaconda/bin
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "${HOME}/.google/google-cloud-sdk/path.bash.inc" ]; then 
@@ -14,3 +15,9 @@ fi
 if [ -f "${HOME}/.google/google-cloud-sdk/completion.bash.inc" ]; then 
     source "${HOME}/.google/google-cloud-sdk/completion.bash.inc";
 fi
+
+#### NVM
+export NVM_DIR="${HOME}/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
