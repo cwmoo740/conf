@@ -8,6 +8,10 @@ git_rm_branches () {
     git branch | grep -v "$(git rev-parse --abbrev-ref HEAD)\|master" | xargs git branch -D
 }
 
+git_branch_name () {
+    git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/"
+}
+
 pacsave () {
     pacaur -Qqet > "${HOME}/.cowmoo/packages.txt"
 }

@@ -2,3 +2,34 @@ export EDITOR="/usr/bin/vim"
 export WEBIDE_JDK="/usr/lib/jvm/intellij-jdk"
 export IDEA_JDK="/usr/lib/jvm/intellij-jdk"
 export JAVA_HOME="/usr/lib/jvm/default"
+
+green=$(tput setaf 2)
+red=$(tput setaf 9)
+blue=$(tput setaf 12)
+yellow=$(tput setaf 3)
+pink=$(tput setaf 207)
+reset=$(tput sgr0)
+PROMPT_HOST="\[${pink}\]\w\[${reset}\]"
+PROMPT_END="\[${pink}\]\$\[${reset}\] "
+PROMPT_GIT () {
+    BRANCHNAME=$(git_branch_name)
+    if [[ -z ${BRANCHNAME} ]]; then
+        exit 0
+    fi
+    RESULT="\x01${reset}\x02:\x01${blue}\x02${BRANCHNAME}\x01${reset}\x02"
+
+    GIT_STAGED=$(git diff --cached --name-only | wc -l)
+    GIT_MODIFIED=$(git diff --name-only | wc -l)
+    GIT_UNTRACKED=$(git ls-files --others --exclude-standard | wc -l)
+    if [[ "${GIT_STAGED}" -eq 0 && "${GIT_MODIFIED}" -eq 0 && "${GIT_UNTRACKED}" -eq 0 ]]; then
+        echo -e "${RESULT}"
+        exit 0
+    fi
+    RESULT="${RESULT}\x01${reset}\002("
+    RESULT="${RESULT}\x01${green}\x02${GIT_STAGED}\x01${reset}\x02,"
+    RESULT="${RESULT}\x01${red}\x02${GIT_MODIFIED}\x01${reset}\x02,"
+    RESULT="${RESULT}\x01${yellow}\x02${GIT_UNTRACKED}"
+
+    echo -e "$RESULT\x01${reset}\x02)"
+}
+export PS1="${PROMPT_HOST}\$(PROMPT_GIT)${PROMPT_END}"
