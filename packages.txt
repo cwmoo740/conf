@@ -6,6 +6,7 @@ git
 gnome-tweak-tool
 hub
 intellij-idea-ultimate-edition
+intellij-jdk
 pacaur
 private-internet-access-vpn
 pycharm-professional
