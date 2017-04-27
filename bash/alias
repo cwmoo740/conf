@@ -12,10 +12,6 @@ git_branch_name () {
     git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/"
 }
 
-pacsave () {
-    pacaur -Qqet > "${HOME}/.cowmoo/packages.txt"
-}
-
 pacrestore () {
     pacaur -S --needed - < "${HOME}/.cowmoo/packages.txt"
 }
