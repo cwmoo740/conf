@@ -1,6 +1,6 @@
 node_modules () {
     if [ -d "${PWD}/node_modules" ]; then
-        export PATH="${PATH}":"${PWD}"/node_modules/.bin
+        export PATH="${PWD}"/node_modules/.bin:"${PATH}"
     fi
 }
 
