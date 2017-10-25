@@ -3,17 +3,7 @@ source "${HOME}/.cowmoo/bash/var"
 
 node_modules
 
-export PATH=${PATH}:${HOME}/.config/yarn/global/node_modules/.bin
-export PATH=${PATH}:${HOME}/.anaconda/bin
+export PATH=${PATH}:${HOME}/.yarn/bin
+export PATH=${PATH}:/opt/anaconda/bin
 export PATH=${PATH}:/usr/lib/git-core
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "${HOME}/.google/google-cloud-sdk/path.bash.inc" ]; then 
-    source "${HOME}/.google/google-cloud-sdk/path.bash.inc"; 
-fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "${HOME}/.google/google-cloud-sdk/completion.bash.inc" ]; then 
-    source "${HOME}/.google/google-cloud-sdk/completion.bash.inc";
-fi
 

@@ -5,7 +5,7 @@ general {
 }
 
 order += "wireless wlp58s0"
-order += "ethernet _first_"
+order += "ethernet enp5s0u1u2"
 order += "battery 0"
 order += "tztime local"
 
@@ -14,7 +14,7 @@ wireless wlp58s0 {
     format_down = "W: down"
 }
 
-ethernet _first_ {
+ethernet enp5s0u1u2 {
     format_up = "E: %ip (%speed)"
     format_down = ""
 }
