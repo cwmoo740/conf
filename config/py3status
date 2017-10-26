@@ -6,6 +6,7 @@ general {
 
 order += "wireless wlp58s0"
 order += "ethernet enp5s0u1u2"
+order += "vpn_status"
 order += "battery 0"
 order += "tztime local"
 
@@ -17,6 +18,10 @@ wireless wlp58s0 {
 ethernet enp5s0u1u2 {
     format_up = "E: %ip (%speed)"
     format_down = ""
+}
+
+vpn_status {
+    format = "{name}"
 }
 
 battery 0 {
