@@ -1,3 +1,5 @@
+alias ls='ls --color=auto'
+
 node_modules () {
     if [ -d "${PWD}/node_modules" ]; then
         export PATH="${PWD}"/node_modules/.bin:"${PATH}"
