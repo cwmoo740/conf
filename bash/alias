@@ -13,3 +13,9 @@ git_rm_branches () {
 git_branch_name () {
     git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/"
 }
+
+nvm () {
+  export NVM_DIR="/home/cowmoo/.nvm"
+  source "/usr/share/nvm/init-nvm.sh"
+}
+
