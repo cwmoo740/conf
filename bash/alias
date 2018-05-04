@@ -15,7 +15,7 @@ git_branch_name () {
 }
 
 nvm () {
-  export NVM_DIR="/home/cowmoo/.nvm"
+  export NVM_DIR="${HOME}/.nvm"
   source "/usr/share/nvm/init-nvm.sh"
 }
 

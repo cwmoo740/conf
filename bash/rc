@@ -6,4 +6,5 @@ node_modules
 export PATH=${PATH}:${HOME}/.yarn/bin
 export PATH=${PATH}:/opt/anaconda/bin
 export PATH=${PATH}:/usr/lib/git-core
+export PATH=${PATH}:${HOME}/.local/bin
 
