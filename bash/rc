@@ -1,10 +1,9 @@
-source "${HOME}/.cowmoo/bash/alias"
-source "${HOME}/.cowmoo/bash/var"
+source "${HOME}/.config/cowmoo/bash/alias"
+source "${HOME}/.config/cowmoo/bash/var"
 
 node_modules
 
 export PATH=${PATH}:${HOME}/.yarn/bin
-export PATH=${PATH}:/opt/anaconda/bin
 export PATH=${PATH}:/usr/lib/git-core
 export PATH=${PATH}:${HOME}/.local/bin
 
